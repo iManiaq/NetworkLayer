@@ -12,7 +12,7 @@ import Security
 
 typealias NetworkHTTPMethod = Alamofire.HTTPMethod
 typealias NetworkRequest = Alamofire.Request
-typealias NetworkNetworkManager = Alamofire.Session
+typealias NetworkManager = Alamofire.Session
 typealias NetworkAPIClientCompletion = (_ result : AnyObject?, _ error : Error?) -> Void
 
 public typealias NetworkCompletion = (_ error: NSError?) -> Void
@@ -49,8 +49,8 @@ class NetworkAPIClient: NSObject {
         }
     }
     
-    let manager : NetworkNetworkManager = {
-        let manager = NetworkNetworkManager(configuration: NetworkAPIClient.defaultSessionConfiguration)
+    let manager : NetworkManager = {
+        let manager = NetworkManager(configuration: NetworkAPIClient.defaultSessionConfiguration)
         return manager
     }()
     
